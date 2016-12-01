@@ -57,7 +57,7 @@ class _ucCamel_casePlural_Controller extends Controller
         $result = $this->service->create($request->except('_token'));
 
         if ($result) {
-            return redirect(route('_sectionRoutePrefix__lower_casePlural_.edit', ['id' => $result->id]))->with('message', 'Successfully created');
+            return redirect(route('_sectionRoutePrefix__lower_casePlural_.index'))->with('message', 'Successfully created');
         }
 
         return redirect(route('_sectionRoutePrefix__lower_casePlural_.index'))->with('message', 'Failed to create');
@@ -99,7 +99,7 @@ class _ucCamel_casePlural_Controller extends Controller
         $result = $this->service->update($id, $request->except('_token'));
 
         if ($result) {
-            return back()->with('message', 'Successfully updated');
+            return redirect(route('_sectionRoutePrefix__lower_casePlural_.index'))->with('message', 'Successfully updated');
         }
 
         return back()->with('message', 'Failed to update');
