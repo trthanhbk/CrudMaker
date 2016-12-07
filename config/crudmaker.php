@@ -13,6 +13,7 @@ return [
 
     'template_source'            => app()->basePath().'/resources/crudmaker/crud',
     'date_format' => 'm-d-Y',
+    'serializer' => 'League\Fractal\Serializer\DataArraySerializer',
 
     /*
     |--------------------------------------------------------------------------
