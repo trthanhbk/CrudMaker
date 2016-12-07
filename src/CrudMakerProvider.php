@@ -17,6 +17,7 @@ class CrudMakerProvider extends ServiceProvider
             __DIR__.'/Templates/Laravel'          => base_path('resources/crudmaker/crud'),
             __DIR__.'/../config/crudmaker.php'    => base_path('config/crudmaker.php'),
         ]);
+        $this->app->bind('League\Fractal\Serializer\SerializerAbstract', config('crudmaker.serializer'));
     }
 
     /**
