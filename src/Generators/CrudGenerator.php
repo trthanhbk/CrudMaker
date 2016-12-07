@@ -158,6 +158,28 @@ class CrudGenerator
     }
 
     /**
+     * Create the service.
+     *
+     * @param array $config
+     *
+     * @return bool
+     */
+    public function createTransformer($config)
+    {
+        $this->fileService->mkdir($config['_path_transformer_'], 0777, true);
+
+        $request = $this->filesystem->get($config['template_source'].'/Transformer.txt');
+
+        foreach ($config as $key => $value) {
+            $request = str_replace($key, $value, $request);
+        }
+
+        $request = $this->filesystem->put($config['_path_transformer_'].'/'.$config['_camel_case_'].'Transformer.php', $request);
+
+        return $request;
+    }
+
+    /**
      * Create the routes.
      *
      * @param array $config

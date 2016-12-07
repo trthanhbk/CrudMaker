@@ -34,6 +34,7 @@ class CrudMakerProvider extends ServiceProvider
 
         if (class_exists('Illuminate\Foundation\AliasLoader')) {
             $this->app->register(\Yab\FormMaker\FormMakerProvider::class);
+            $this->app->register(\Sorskod\Larasponse\LarasponseServiceProvider::class);
         }
 
         /*

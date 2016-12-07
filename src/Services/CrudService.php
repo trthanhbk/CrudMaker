@@ -30,6 +30,7 @@ class CrudService
     {
         $this->crudGenerator->createModel($config);
         $this->crudGenerator->createService($config);
+        $this->crudGenerator->createTransformer($config);
 
         if (strtolower($config['framework']) === 'laravel') {
             $this->crudGenerator->createRequest($config);
